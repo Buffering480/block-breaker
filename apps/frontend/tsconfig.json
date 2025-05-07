@@ -1,0 +1,14 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "moduleResolution": "bundler",
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
+    "jsx": "preserve",
+    "types": ["vite/client"], // Viteの型定義を追加
+    "noEmit": true, // JSファイルは出力しない
+    "incremental": false, // noEmitならキャッシュは不要
+    "baseUrl": ".", // pathsの基点
+    "paths": { "@/*": ["./src/*"] } // パスエイリアス
+  },
+  "include": ["src"]
+}

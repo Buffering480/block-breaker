@@ -1,0 +1,17 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "module": "CommonJS", // ESMなら NodeNext か ESNext
+    "moduleResolution": "NodeNext", // ESMなら NodeNext
+    "target": "ES2020",
+    "lib": ["ESNext"],
+    "types": ["node"], // Node.jsのグローバル型定義を追加
+    "outDir": "./build", // 出力先
+    "rootDir": "./src", // ソースルート
+    "baseUrl": "./src", // pathsの基点
+    "paths": { "@/*": ["*"] }, // パスエイリアス
+    "sourceMap": true // ソースマップを出力
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "build"]
+}

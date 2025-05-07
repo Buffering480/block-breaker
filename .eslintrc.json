@@ -1,0 +1,33 @@
+{
+  "root": true, // この設定ファイルがプロジェクトのルートであることを示す
+  "env": {
+    "browser": true, // ブラウザ環境のグローバル変数を有効化 (主にフロントエンド用)
+    "node": true, // Node.js 環境のグローバル変数を有効化 (主にバックエンド用)
+    "es2021": true // ES2021 の構文を有効化
+  },
+  "parser": "@typescript-eslint/parser", // TypeScriptを解析するためのパーサーを指定
+  "parserOptions": {
+    "ecmaVersion": "latest", // 最新のECMAScriptバージョンをサポート
+    "sourceType": "module" // ESモジュールを使用
+    // "project": ["./apps/frontend/tsconfig.json", "./apps/backend/tsconfig.json"] // 型情報を使ったLintを有効にする場合 (少し高度、最初はなくてもOK)
+  },
+  "plugins": [
+    "@typescript-eslint" // TypeScript用プラグインを有効化
+  ],
+  "extends": [
+    "eslint:recommended", // ESLint推奨の基本ルールセット
+    "plugin:@typescript-eslint/recommended", // TypeScriptプラグイン推奨のルールセット
+    "prettier" // ★ Prettierと競合するESLintルールを無効化 (eslint-config-prettier)
+  ],
+  "rules": {
+    // ここにプロジェクト独自のルールを追加・上書きできます
+    // 例: console.logを許可しない場合は "no-console": "warn" など
+  },
+  "ignorePatterns": [
+    // ESLintのチェック対象外とするファイルやディレクトリ
+    "node_modules/",
+    "dist/",
+    "build/",
+    ".vercel/"
+  ]
+}
