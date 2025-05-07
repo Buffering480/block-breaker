@@ -8,7 +8,9 @@
     "noEmit": true, // JSファイルは出力しない
     "incremental": false, // noEmitならキャッシュは不要
     "baseUrl": ".", // pathsの基点
-    "paths": { "@/*": ["./src/*"] } // パスエイリアス
+    "paths": { "@/*": ["./src/*"] }, // パスエイリアス
+    "target": "ES2017",
+    "module": "ESNext"
   },
   "include": ["src"]
 }
